@@ -1,15 +1,16 @@
 <template>
   <main v-if="!loading">
-    <DataTitle :text="title" :dataDate="dataDate" />
-    <DataBox :stats="stats" />
     <CountrySelect @get-country="getCountryData" :countries="countries" />
     <button
       @click="clearCountryData()"
       v-if="stats.Country"
-      class="bg-blue-400 text-white rounded p-3 mt-10 focus:outline-none hover:bg-blue-300"
+      class="bg-gray-700 text-white rounded p-3 mt-5 focus:outline-none hover:bg-gray-600 "
     >
+      <i class="far fa-times-circle"></i>
       Clear Country
     </button>
+    <DataTitle :text="title" :dataDate="dataDate" />
+    <DataBox :stats="stats" />
   </main>
   <main class="flex flex-col algin-center justify-center text-center" v-else>
     <div class="text-gray-500 text-3xl mt-10 mb-6">
